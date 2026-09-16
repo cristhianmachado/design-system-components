@@ -2,6 +2,7 @@
 // Consumidores importam tudo a partir daqui: import { Button, Card } from '...'
 
 export { Button, buttonVariants, type ButtonProps } from "./registry/ui/button";
+export { Badge, badgeVariants, type BadgeProps } from "./registry/ui/badge";
 export {
   Card,
   CardHeader,

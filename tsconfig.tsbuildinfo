@@ -1,1 +1,1 @@
-{"root":["./src/index.ts","./src/registry/lib/utils.ts","./src/registry/ui/button.tsx","./src/registry/ui/card.tsx","./demo/DemoApp.tsx","./demo/main.tsx"],"version":"5.7.2"}
+{"root":["./src/index.ts","./src/registry/lib/utils.ts","./src/registry/ui/badge.tsx","./src/registry/ui/button.tsx","./src/registry/ui/card.tsx","./demo/DemoApp.tsx","./demo/main.tsx"],"version":"5.7.2"}
