@@ -3,6 +3,7 @@
 
 export { Button, buttonVariants, type ButtonProps } from "./registry/ui/button";
 export { Badge, badgeVariants, type BadgeProps } from "./registry/ui/badge";
+export { Input, type InputProps } from "./registry/ui/input";
 export {
   Card,
   CardHeader,
