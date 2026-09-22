@@ -11,6 +11,11 @@ export {
   type SkeletonProps,
 } from "./registry/ui/skeleton";
 export {
+  Separator,
+  separatorVariants,
+  type SeparatorProps,
+} from "./registry/ui/separator";
+export {
   Alert,
   AlertTitle,
   AlertDescription,

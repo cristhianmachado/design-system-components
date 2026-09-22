@@ -76,6 +76,18 @@
       ]
     },
     {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Divisor horizontal ou vertical com suporte a acessibilidade.",
+      "files": [
+        {
+          "path": "src/registry/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "alert",
       "type": "registry:ui",
       "title": "Alert",
