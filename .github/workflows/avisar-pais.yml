@@ -2,22 +2,23 @@ name: Notificar Projetos Pais
 on:
   push:
     branches:
-      - main # Dispara sempre que algo for mergeado na main do componente
+      - main
+    paths:
+      - 'src/registry/**'
 
 jobs:
   notificar:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repositorios:
+          - cristhianmachado/sistema-principal
+          - cristhianmachado/painel-admin
+          
     steps:
-      - name: Avisar Projeto Pai 1
+      - name: Avisar ${{ matrix.repositorios }}
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.PAT_TOKEN }}
-          repository: cristhianmachado/sistema-principal
-          event-type: atualizou-componente # O mesmo nome do sinal que o pai está escutando
-
-      - name: Avisar Projeto Pai 2
-        uses: peter-evans/repository-dispatch@v3
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
-          repository: cristhianmachado/painel-admin
+          repository: ${{ matrix.repositorios }}
           event-type: atualizou-componente
