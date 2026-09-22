@@ -52,6 +52,18 @@
       ]
     },
     {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Alert para mensagens de destaque (Title, Description) com variantes.",
+      "files": [
+        {
+          "path": "src/registry/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "utils",
       "type": "registry:lib",
       "title": "cn utils",
