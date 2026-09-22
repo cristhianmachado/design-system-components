@@ -6,6 +6,11 @@ export { Badge, badgeVariants, type BadgeProps } from "./registry/ui/badge";
 export { Input, type InputProps } from "./registry/ui/input";
 export { Label, labelVariants, type LabelProps } from "./registry/ui/label";
 export {
+  Skeleton,
+  skeletonVariants,
+  type SkeletonProps,
+} from "./registry/ui/skeleton";
+export {
   Alert,
   AlertTitle,
   AlertDescription,
