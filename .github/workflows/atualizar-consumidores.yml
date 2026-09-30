@@ -6,13 +6,29 @@ name: Atualizar Consumidores
 on:
   workflow_dispatch:
     inputs:
+      ticket:
+        description: "Número do ticket no formato MAG-XXXX (usado na tag do commit e no nome da PR)"
+        required: true
       motivo:
         description: "Motivo da atualização (aparece no corpo da PR dos consumidores)"
         required: false
         default: "Atualização manual do Design System"
 
 jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validar formato do ticket
+        run: |
+          TICKET="${{ inputs.ticket }}"
+          if ! echo "$TICKET" | grep -qE '^MAG-[0-9]+$'; then
+            echo "::error::Ticket inválido: '$TICKET'. Use o formato MAG-XXXX (ex.: MAG-1234)."
+            exit 1
+          fi
+          echo "Ticket válido: $TICKET"
+
   avisar:
+    needs: validar
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -30,6 +46,7 @@ jobs:
           event-type: atualizou-componente
           client-payload: |
             {
+              "ticket": ${{ toJSON(inputs.ticket) }},
               "motivo": ${{ toJSON(inputs.motivo) }},
               "ref": ${{ toJSON(github.sha) }}
             }
