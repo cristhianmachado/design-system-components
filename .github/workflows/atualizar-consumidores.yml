@@ -21,8 +21,8 @@ jobs:
       - name: Validar formato do ticket
         run: |
           TICKET="${{ inputs.ticket }}"
-          if ! echo "$TICKET" | grep -qE '^MAG-[0-9]+$'; then
-            echo "::error::Ticket inválido: '$TICKET'. Use o formato MAG-XXXX (ex.: MAG-1234)."
+          if ! echo "$TICKET" | grep -qE '^MAG-[0-9]{5}$'; then
+            echo "::error::Ticket inválido: '$TICKET'. Use o formato MAG-XXXXX (ex.: MAG-12345)."
             exit 1
           fi
           echo "Ticket válido: $TICKET"
