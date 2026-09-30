@@ -17,6 +17,11 @@ export {
   type SeparatorProps,
 } from "./registry/ui/separator";
 export {
+  Switch,
+  switchVariants,
+  type SwitchProps,
+} from "./registry/ui/switch";
+export {
   Alert,
   AlertTitle,
   AlertDescription,

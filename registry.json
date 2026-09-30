@@ -112,6 +112,18 @@
       ]
     },
     {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Switch (toggle) acessível com tamanhos e modo controlado/não controlado.",
+      "files": [
+        {
+          "path": "src/registry/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "utils",
       "type": "registry:lib",
       "title": "cn utils",
