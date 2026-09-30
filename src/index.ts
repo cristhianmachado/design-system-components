@@ -27,6 +27,15 @@ export {
   type CheckboxProps,
 } from "./registry/ui/checkbox";
 export {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+  avatarVariants,
+  type AvatarProps,
+  type AvatarImageProps,
+  type AvatarFallbackProps,
+} from "./registry/ui/avatar";
+export {
   Alert,
   AlertTitle,
   AlertDescription,

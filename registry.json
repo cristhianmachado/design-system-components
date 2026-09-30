@@ -136,6 +136,18 @@
       ]
     },
     {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Avatar composável (Image, Fallback) com tamanhos e fallback automático.",
+      "files": [
+        {
+          "path": "src/registry/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "utils",
       "type": "registry:lib",
       "title": "cn utils",
