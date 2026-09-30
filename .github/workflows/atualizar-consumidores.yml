@@ -1,0 +1,35 @@
+name: Atualizar Consumidores
+
+# Botão manual: aba Actions -> "Atualizar Consumidores" -> "Run workflow".
+# Dispara um repository_dispatch para cada repositório consumidor da matrix,
+# que por sua vez abre um PR bumpando o pin do submodule design-system-components.
+on:
+  workflow_dispatch:
+    inputs:
+      motivo:
+        description: "Motivo da atualização (aparece no corpo da PR dos consumidores)"
+        required: false
+        default: "Atualização manual do Design System"
+
+jobs:
+  avisar:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        repositorio:
+          - cristhianmachado/sistema-principal
+          - cristhianmachado/painel-admin
+
+    steps:
+      - name: Avisar ${{ matrix.repositorio }}
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          repository: ${{ matrix.repositorio }}
+          event-type: atualizou-componente
+          client-payload: |
+            {
+              "motivo": ${{ toJSON(inputs.motivo) }},
+              "ref": ${{ toJSON(github.sha) }}
+            }
