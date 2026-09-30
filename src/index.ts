@@ -22,6 +22,11 @@ export {
   type SwitchProps,
 } from "./registry/ui/switch";
 export {
+  Checkbox,
+  checkboxVariants,
+  type CheckboxProps,
+} from "./registry/ui/checkbox";
+export {
   Alert,
   AlertTitle,
   AlertDescription,
